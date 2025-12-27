@@ -1,42 +1,252 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  width: 100%;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.app-container {
+  width: 100%;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+h1 {
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+}
+
+h2 {
+  color: #444;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.table-section {
+  margin-bottom: 40px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #007bff;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 6px;
+  border: 1px solid #ced4da;
+}
+
+.score-table, .stats-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.score-table th, .stats-table th {
+  background-color: #007bff;
+  color: white;
+  padding: 16px;
+  text-align: center;
+  font-weight: 600;
+  border: 1px solid #0056b3;
+}
+
+.score-table td, .stats-table td {
+  padding: 14px;
+  text-align: center;
+  border: 1px solid #dee2e6;
+  background-color: white;
+}
+
+.score-table tr:nth-child(even) td,
+.stats-table tr:nth-child(even) td {
+  background-color: #f8f9fa;
+}
+
+.score-table tr:hover td,
+.stats-table tr:hover td {
+  background-color: #e9ecef;
+}
+
+.round-cell, .player-cell {
+  font-weight: 600;
+  background-color: #e9ecef !important;
+}
+
+.score-cell, .stat-cell {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.action-cell {
+  min-width: 150px;
+}
+
+.score-input, .stat-input {
+  width: 80px;
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.score-value, .stat-value {
+  display: inline-block;
+  min-width: 60px;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+  border: 1px solid transparent;
+}
+
+.total-row {
+  background-color: #e7f1ff !important;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.total-row td {
+  background-color: #e7f1ff !important;
+  color: #0056b3;
+}
+
+.btn {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin: 0 4px;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #1e7e34;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #545b62;
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+}
+
+.instructions {
+  margin-top: 40px;
+  padding: 25px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border-left: 5px solid #007bff;
+}
+
+.instructions h3 {
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.instructions ul {
+  text-align: left;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.instructions li {
+  margin-bottom: 10px;
+  padding-left: 25px;
+  position: relative;
+  color: #555;
+}
+
+.instructions li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #28a745;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .app-container {
+    padding: 15px;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  
+  .table-header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  
+  .btn {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  
+  .btn-sm {
+    width: auto;
+  }
 }
